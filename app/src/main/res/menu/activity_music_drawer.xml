@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/one" android:checkableBehavior="single">
+        <item
+            android:id="@+id/popular_movies"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/popular_movies" />
+    </group>
+
+
+    <group android:id="@+id/two" android:checkableBehavior="single">
+        <item
+            android:id="@+id/discover_movies"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/discover_movies" />
+    </group>
+
+    <group android:id="@+id/three" android:checkableBehavior="single">
+        <item
+            android:id="@+id/upcoming_movies"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/upcoming_movies" />
+    </group>
+
+    <group android:id="@+id/four" android:checkableBehavior="single">
+            <item
+                android:id="@+id/now_playing"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/now_playing" />
+    </group>
+
+    <group android:id="@+id/five" android:checkableBehavior="single">
+            <item
+                android:id="@+id/top_rated"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/top_rated" />
+    </group>
+
+</menu>
