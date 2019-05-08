@@ -26,15 +26,15 @@ public class SongPagingAdapter extends RecyclerView.Adapter<SongViewHolder>{
     }
     @Override
     public SongViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.song_list_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.row_movie, parent, false);
         return new SongViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(SongViewHolder holder, int position) {
         SongObject songs = allSongs.get(position);
-        holder.songTitle.setText(songs.getSongTitle());
-        holder.songAuthor.setText(songs.getSongAuthor());
+        holder.textTitle.setText(songs.getMovieTitle());
+        holder.textReleased.setText(songs.getReleasedYear());
     }
 
     @Override

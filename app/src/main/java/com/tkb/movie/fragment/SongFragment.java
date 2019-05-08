@@ -3,6 +3,7 @@ package com.tkb.movie.fragment;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.Flowable;
@@ -37,7 +38,7 @@ public class SongFragment extends Fragment {
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
     private int pageNumber = 1;
     private int lastVisibleItem, totalItemCount;
-    private LinearLayoutManager layoutManager;
+    private GridLayoutManager gridLayoutManager;
     private final int VISIBLE_THRESHOLD = 1;
 
     RecyclerView songRecyclerView;
@@ -51,16 +52,13 @@ public class SongFragment extends Fragment {
 
         progressBar = view.findViewById(R.id.progressBar);
 
-        layoutManager = new LinearLayoutManager(getActivity());
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
 
         getActivity().setTitle("Songs");
         songRecyclerView = view.findViewById(R.id.song_list);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        songRecyclerView.setLayoutManager(linearLayoutManager);
+        gridLayoutManager = new GridLayoutManager(getActivity(), 3);
+        songRecyclerView.setLayoutManager(gridLayoutManager);
         songRecyclerView.setHasFixedSize(true);
 
-        songRecyclerView.setLayoutManager(layoutManager);
 
         int position = getArguments().getInt("position");
 
@@ -78,8 +76,8 @@ public class SongFragment extends Fragment {
                                    int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
-                totalItemCount = layoutManager.getItemCount();
-                lastVisibleItem = layoutManager
+                totalItemCount = gridLayoutManager.getItemCount();
+                lastVisibleItem = gridLayoutManager
                         .findLastVisibleItemPosition();
                 if (!loading
                         && totalItemCount <= (lastVisibleItem + VISIBLE_THRESHOLD)) {

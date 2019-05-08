@@ -11,22 +11,25 @@ import com.tkb.movie.R;
 
 public class SongViewHolder extends RecyclerView.ViewHolder{
 
-    public TextView songTitle;
-    public TextView songAuthor;
-    public ImageView songImage;
+    public TextView textTitle;
+    public TextView textReleased;
+    public TextView textRating;
+    public ImageView movieThum;
 
-    public SongViewHolder(View itemView, TextView songTitle, TextView songAuthor, ImageView songImage) {
+    public SongViewHolder(View itemView, TextView textTitle, TextView textReleased, ImageView movieThum, TextView textRating) {
         super(itemView);
-        this.songTitle = songTitle;
-        this.songAuthor = songAuthor;
-        this.songImage = songImage;
+        this.textTitle = textTitle;
+        this.textReleased = textReleased;
+        this.movieThum = movieThum;
+        this.textRating = textRating;
     }
 
     public SongViewHolder(View itemView) {
         super(itemView);
 
-        songTitle = itemView.findViewById(R.id.song_title);
-        songAuthor = itemView.findViewById(R.id.song_author);
-        songImage = itemView.findViewById(R.id.song_cover);
+        textTitle = itemView.findViewById(R.id.txt_title);
+        textReleased = itemView.findViewById(R.id.txt_released);
+        movieThum = itemView.findViewById(R.id.img_thumnail);
+        textRating = itemView.findViewById(R.id.txt_rating);
     }
 }
