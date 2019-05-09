@@ -10,7 +10,7 @@ public class TabFactory {
     public static List<SongObject>getTabItems(int position){
         switch (position){
             case 0 :
-                return getTestData1();
+                return getTestData();
             case 1 :
                 return getTestData2();
             case 2 :
@@ -19,6 +19,12 @@ public class TabFactory {
                 return getTestData1();
         }
     }
+    private static List<SongObject> getTestData() {
+        List<SongObject> recentSongs = new ArrayList<SongObject>();
+
+        return recentSongs;
+    }
+
     private static List<SongObject> getTestData1() {
         List<SongObject> recentSongs = new ArrayList<SongObject>();
         recentSongs.add(new SongObject("Adele", "Someone Like You", ""));

@@ -5,14 +5,15 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.tkb.movie.fragment.LibraryFragment;
 import com.tkb.movie.fragment.SongFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomFragmentPageAdapter extends FragmentPagerAdapter{
+public class CustomFragmentPageAdapter extends FragmentStatePagerAdapter {
 
     private static final String TAG = CustomFragmentPageAdapter.class.getSimpleName();
 
@@ -47,10 +48,11 @@ public class CustomFragmentPageAdapter extends FragmentPagerAdapter{
             case 3:
                 return new SongFragment();
         }*/
-        Fragment fragment =  new SongFragment();
+        /*Fragment fragment =  new SongFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("position", position);
-        fragment.setArguments(bundle);
+        fragment.setArguments(bundle);*/
+        SongFragment fragment = SongFragment.newInstance(position);
         return fragment;
     }
 

@@ -42,6 +42,7 @@ public class SongFragment extends Fragment {
     private final int VISIBLE_THRESHOLD = 1;
 
     RecyclerView songRecyclerView;
+    int position;
     public SongFragment() {
 
     }
@@ -53,21 +54,59 @@ public class SongFragment extends Fragment {
         progressBar = view.findViewById(R.id.progressBar);
 
 
-        getActivity().setTitle("Songs");
+        getActivity().setTitle("Songs"+position);
         songRecyclerView = view.findViewById(R.id.song_list);
         gridLayoutManager = new GridLayoutManager(getActivity(), 3);
         songRecyclerView.setLayoutManager(gridLayoutManager);
         songRecyclerView.setHasFixedSize(true);
 
 
-        int position = getArguments().getInt("position");
+      /*  int position = getArguments().getInt("position");
+
+        paginationAdapter = new SongPagingAdapter(getActivity(), TabFactory.getTabItems(position));
+        songRecyclerView.setAdapter(paginationAdapter);
+        setUpLoadMoreListener();
+        subscribeForData();*/
+        return view;
+    }
+
+    /**
+     * Create a new instance of CountingFragment, providing "num"
+     * as an argument.
+     */
+    public static SongFragment newInstance(int num) {
+        SongFragment f = new SongFragment();
+
+        // Supply num input as an argument.
+        Bundle args = new Bundle();
+        args.putInt("position", num);
+        f.setArguments(args);
+
+        return f;
+    }
+    /**
+     * When creating, retrieve this instance's number from its arguments.
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        position = getArguments() != null ? getArguments().getInt("position") : 1;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+       /* setListAdapter(new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, Cheeses.sCheeseStrings));*/
+        //int position = getArguments().getInt("position");
 
         paginationAdapter = new SongPagingAdapter(getActivity(), TabFactory.getTabItems(position));
         songRecyclerView.setAdapter(paginationAdapter);
         setUpLoadMoreListener();
         subscribeForData();
-        return view;
     }
+
+
 
     private void setUpLoadMoreListener() {
         songRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
