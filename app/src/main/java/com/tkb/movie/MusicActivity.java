@@ -35,7 +35,7 @@ public class MusicActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+       // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,16 +45,27 @@ public class MusicActivity extends AppCompatActivity{
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
+
         fragmentManager = getSupportFragmentManager();
-        final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragment = new LibraryFragment();
-        fragmentTransaction.replace(R.id.main_container_wrapper, fragment);
-        fragmentTransaction.commit();
+        //final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+
+
+        if (savedInstanceState != null) {
+            fragment =  getSupportFragmentManager().findFragmentByTag("LibraryFragment");
+        } else {
+            fragment = new LibraryFragment();
+            getSupportFragmentManager().beginTransaction().add(R.id.main_container_wrapper, fragment, "LibraryFragment").commit();
+
+        }
+        /*//fragmentTransaction.replace(R.id.main_container_wrapper, fragment);
+        //fragmentTransaction.commit();*/
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        /*View header = navigationView.inflateHeaderView(R.layout.nav_header_music);
+        View header = navigationView.inflateHeaderView(R.layout.nav_header_music);
         TextView profileName =  header.findViewById(R.id.profile_name);
-        profileName.setText("Adele");*/
+        profileName.setText("Adele");
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -72,7 +83,6 @@ public class MusicActivity extends AppCompatActivity{
                     fragment = new PlaylistFragment();
 
                 }else if (id == R.id.top_rated) {
-                    //fragment = new PlaylistFragment();
                     fragment = new LoadMovieFragment();
                 }
 
@@ -100,7 +110,7 @@ public class MusicActivity extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.music, menu);
+        getMenuInflater().inflate(R.menu.movie, menu);
 
         MenuItem mSearch = menu.findItem(R.id.action_search);
 
@@ -124,20 +134,4 @@ public class MusicActivity extends AppCompatActivity{
 
         return true;
     }
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-       *//* if (id == R.id.action_settings) {
-            return true;
-        }*//*
-
-        return super.onOptionsItemSelected(item);
-    }*/
-
 }

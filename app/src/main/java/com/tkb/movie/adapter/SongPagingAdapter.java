@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tkb.movie.R;
-import com.tkb.movie.entities.SongObject;
 import com.tkb.movie.internet.model.MovieData;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,14 +16,16 @@ import androidx.recyclerview.widget.RecyclerView;
 public class SongPagingAdapter extends RecyclerView.Adapter<SongViewHolder>{
 
     private Context context;
-    private List<MovieData> allSongs;
+    private List<MovieData> allMovies = new ArrayList<>();
 
-    public SongPagingAdapter(Context context, List<MovieData> allSongs) {
+    public SongPagingAdapter(Context context) {
         this.context = context;
-        this.allSongs = allSongs;
     }
     public void addItems(List<MovieData> items) {
-        this.allSongs.addAll(items);
+        this.allMovies.addAll(items);
+    }
+    public void addSingleItem(MovieData item) {
+        this.allMovies.add(item);
     }
     @Override
     public SongViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -33,14 +35,14 @@ public class SongPagingAdapter extends RecyclerView.Adapter<SongViewHolder>{
 
     @Override
     public void onBindViewHolder(SongViewHolder holder, int position) {
-        MovieData songs = allSongs.get(position);
+        MovieData songs = allMovies.get(position);
         holder.textTitle.setText(songs.getTitle());
         holder.textReleased.setText(songs.getReleaseDate());
     }
 
     @Override
     public int getItemCount() {
-        return allSongs.size();
+        return allMovies.size();
     }
 
 }

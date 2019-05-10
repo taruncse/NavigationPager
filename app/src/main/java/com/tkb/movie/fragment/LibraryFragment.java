@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.tkb.movie.R;
 import com.tkb.movie.adapter.CustomFragmentPageAdapter;
+import com.tkb.movie.internet.network.Constant;
 
 
 public class LibraryFragment extends Fragment {
@@ -29,7 +30,7 @@ public class LibraryFragment extends Fragment {
         tabLayout = view.findViewById(R.id.tabs);
         viewPager = view.findViewById(R.id.view_pager);
 
-        viewPager.setAdapter(new CustomFragmentPageAdapter(getChildFragmentManager()));
+        viewPager.setAdapter(new CustomFragmentPageAdapter(getChildFragmentManager(), Constant.getFragments()));
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         return view;
