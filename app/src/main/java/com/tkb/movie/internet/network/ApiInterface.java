@@ -32,4 +32,8 @@ public interface ApiInterface {
     Call<Review> reviews(
             @Path("movie_id") int movieId);
 
+
+    @GET(Constant.MOVIE_PATH + "/top_rated")
+    Call<Movie> getTopRatedMovies(@Query("page") int page);
+
 }

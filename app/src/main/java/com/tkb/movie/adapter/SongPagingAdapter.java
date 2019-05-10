@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.tkb.movie.R;
 import com.tkb.movie.entities.SongObject;
+import com.tkb.movie.internet.model.MovieData;
 
 import java.util.List;
 
@@ -15,13 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 public class SongPagingAdapter extends RecyclerView.Adapter<SongViewHolder>{
 
     private Context context;
-    private List<SongObject> allSongs;
+    private List<MovieData> allSongs;
 
-    public SongPagingAdapter(Context context, List<SongObject> allSongs) {
+    public SongPagingAdapter(Context context, List<MovieData> allSongs) {
         this.context = context;
         this.allSongs = allSongs;
     }
-    public void addItems(List<SongObject> items) {
+    public void addItems(List<MovieData> items) {
         this.allSongs.addAll(items);
     }
     @Override
@@ -32,9 +33,9 @@ public class SongPagingAdapter extends RecyclerView.Adapter<SongViewHolder>{
 
     @Override
     public void onBindViewHolder(SongViewHolder holder, int position) {
-        SongObject songs = allSongs.get(position);
-        holder.textTitle.setText(songs.getMovieTitle());
-        holder.textReleased.setText(songs.getReleasedYear());
+        MovieData songs = allSongs.get(position);
+        holder.textTitle.setText(songs.getTitle());
+        holder.textReleased.setText(songs.getReleaseDate());
     }
 
     @Override

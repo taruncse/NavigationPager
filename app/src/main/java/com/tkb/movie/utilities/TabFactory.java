@@ -1,14 +1,15 @@
 package com.tkb.movie.utilities;
 
 import com.tkb.movie.entities.SongObject;
+import com.tkb.movie.internet.model.MovieData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TabFactory {
 
-    public static List<SongObject>getTabItems(int position){
-        switch (position){
+    public static List<MovieData>getTabItems(int position){
+        /*switch (position){
             case 0 :
                 return getTestData();
             case 1 :
@@ -17,84 +18,52 @@ public class TabFactory {
                 return getTestData3();
             default:
                 return getTestData1();
+        }*/
+       return new ArrayList<>();
+    }
+    private static List<MovieData> getTestData() {
+        List<MovieData> recentMovie = new ArrayList<>();
+        for (int i = 0 ; i<20; i++){
+            MovieData movieData = new MovieData();
+            movieData.setTitle("Mala "+i);
+            movieData.setReleaseDate("20-11-201"+i);
+            recentMovie.add(movieData);
         }
-    }
-    private static List<SongObject> getTestData() {
-        List<SongObject> recentSongs = new ArrayList<SongObject>();
 
-        return recentSongs;
+        return recentMovie;
     }
 
-    private static List<SongObject> getTestData1() {
-        List<SongObject> recentSongs = new ArrayList<SongObject>();
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        return recentSongs;
+    private static List<MovieData> getTestData1() {
+        List<MovieData> recentMovie = new ArrayList<>();
+        for (int i = 0 ; i<20; i++){
+            MovieData movieData = new MovieData();
+            movieData.setTitle("Kiron "+i);
+            movieData.setReleaseDate("20-11-201"+i);
+            recentMovie.add(movieData);
+        }
+
+        return recentMovie;
     }
-    private static List<SongObject> getTestData2() {
-        List<SongObject> recentSongs = new ArrayList<SongObject>();
-        recentSongs.add(new SongObject("dele", "Like You", ""));
-        recentSongs.add(new SongObject("dele", "Like You", ""));
-        recentSongs.add(new SongObject("dele", "Like You", ""));
-        recentSongs.add(new SongObject("dele", "Like You", ""));
-        recentSongs.add(new SongObject("dele", "Like You", ""));
-        recentSongs.add(new SongObject("dele", "Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        return recentSongs;
+    private static List<MovieData> getTestData2() {
+        List<MovieData> recentMovie = new ArrayList<>();
+        for (int i = 0 ; i<20; i++){
+            MovieData movieData = new MovieData();
+            movieData.setTitle("Barun "+i);
+            movieData.setReleaseDate("20-11-201"+i);
+            recentMovie.add(movieData);
+        }
+
+        return recentMovie;
     }
-    private static List<SongObject> getTestData3() {
-        List<SongObject> recentSongs = new ArrayList<SongObject>();
-        recentSongs.add(new SongObject("Tkb", " Like ", ""));
-        recentSongs.add(new SongObject("Tkb", " Like ", ""));
-        recentSongs.add(new SongObject("Tkb", " Like ", ""));
-        recentSongs.add(new SongObject("Tkb", " Like ", ""));
-        recentSongs.add(new SongObject("Tkb", " Like ", ""));
-        recentSongs.add(new SongObject("Tkb", " Like ", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        recentSongs.add(new SongObject("Adele", "Someone Like You", ""));
-        return recentSongs;
+    private static List<MovieData> getTestData3() {
+        List<MovieData> recentMovie = new ArrayList<>();
+        for (int i = 0 ; i<20; i++){
+            MovieData movieData = new MovieData();
+            movieData.setTitle("Tarun "+i);
+            movieData.setReleaseDate("20-11-201"+i);
+            recentMovie.add(movieData);
+        }
+
+        return recentMovie;
     }
 }

@@ -20,13 +20,15 @@ public class ApiService {
 
     private ApiInterface apiInterface;
 
-    public ApiService(){
+    int position;
+    public ApiService(int position){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constant.BASE_URL)
                 .client(builder())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+        this.position = position;
         apiInterface = retrofit.create(ApiInterface.class);
     }
 
@@ -63,9 +65,30 @@ public class ApiService {
         return interceptor;
     }
 
+    public void getData(int page, Callback callback){
+        switch (position){
+            case 0:
+                getPopularMovies(page, callback);
+               break;
+            case 1:
+                getTopRatedMovies(page,callback);
+                break;
+            case 2:
+                getTopRatedMovies(page,callback);
+                break;
+            default:
+                getPopularMovies(page, callback);
+
+        }
+    }
     public void getPopularMovies(int page, Callback callback) {
         apiInterface.popularMovies(page).enqueue(callback);
     }
+
+    public void getTopRatedMovies(int page, Callback callback) {
+        apiInterface.getTopRatedMovies(page).enqueue(callback);
+    }
+
 
     public void getMovieDetail(int movieId, Callback callback) {
         apiInterface.movieDetail(movieId).enqueue(callback);
