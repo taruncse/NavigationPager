@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         new Handler().postDelayed(() -> {
-            Intent startActivityIntent = new Intent(SplashActivity.this, MusicActivity.class);
+            Intent startActivityIntent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(startActivityIntent);
             SplashActivity.this.finish();
         }, SPLASH_DISPLAY_LENGTH);

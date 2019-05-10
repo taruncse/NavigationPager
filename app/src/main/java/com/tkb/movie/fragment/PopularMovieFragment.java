@@ -25,7 +25,7 @@ public class PopularMovieFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_library, container, false);
+        View view = inflater.inflate(R.layout.fragment_popular_movie, container, false);
 
         tabLayout = view.findViewById(R.id.tabs);
         viewPager = view.findViewById(R.id.view_pager);

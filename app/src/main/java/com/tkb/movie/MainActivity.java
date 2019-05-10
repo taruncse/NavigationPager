@@ -20,9 +20,9 @@ import android.widget.Toast;
 
 import com.tkb.movie.fragment.PopularMovieFragment;
 
-public class MusicActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity{
 
-    private static final String TAG = MusicActivity.class.getSimpleName();
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     private FragmentManager fragmentManager;
     private Fragment fragment = null;
@@ -30,7 +30,7 @@ public class MusicActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music);
+        setContentView(R.layout.activity_main);
 
        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -104,7 +104,7 @@ public class MusicActivity extends AppCompatActivity{
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(MusicActivity.this,query,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,query,Toast.LENGTH_SHORT).show();
                 return false;
             }
 

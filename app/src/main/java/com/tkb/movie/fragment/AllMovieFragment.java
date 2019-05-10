@@ -36,7 +36,7 @@ public class AllMovieFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_song, container, false);
+        View view = inflater.inflate(R.layout.fragment_all_movie, container, false);
 
         progressBar = view.findViewById(R.id.progressBar);
 

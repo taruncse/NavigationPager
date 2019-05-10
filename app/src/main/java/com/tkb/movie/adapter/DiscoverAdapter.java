@@ -26,7 +26,7 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverViewHolder>{
 
     @Override
     public DiscoverViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.play_list_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.row_discover, parent, false);
         return new DiscoverViewHolder(view);
     }
 

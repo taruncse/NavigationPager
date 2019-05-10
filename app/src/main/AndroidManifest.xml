@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MusicActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_music"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".pagination.PaginationActivity"></activity>
