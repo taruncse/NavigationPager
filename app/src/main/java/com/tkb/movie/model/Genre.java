@@ -1,4 +1,4 @@
-package com.tkb.movie.internet.model;
+package com.tkb.movie.model;
 
 import com.google.gson.annotations.SerializedName;
 

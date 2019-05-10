@@ -1,4 +1,4 @@
-package com.tkb.movie.internet.model;
+package com.tkb.movie.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

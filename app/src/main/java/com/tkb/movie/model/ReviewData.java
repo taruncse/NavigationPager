@@ -1,4 +1,4 @@
-package com.tkb.movie.internet.model;
+package com.tkb.movie.model;
 
 /**
  * Created by Wim on 5/29/17.

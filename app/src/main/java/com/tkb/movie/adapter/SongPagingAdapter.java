@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tkb.movie.R;
-import com.tkb.movie.internet.model.MovieData;
+import com.tkb.movie.model.MovieData;
 
 import java.util.ArrayList;
 import java.util.List;

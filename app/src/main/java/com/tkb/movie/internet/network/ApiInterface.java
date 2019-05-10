@@ -1,9 +1,9 @@
 package com.tkb.movie.internet.network;
 
-import com.tkb.movie.internet.model.Movie;
-import com.tkb.movie.internet.model.MovieDetail;
-import com.tkb.movie.internet.model.Review;
-import com.tkb.movie.internet.model.Trailer;
+import com.tkb.movie.model.Movie;
+import com.tkb.movie.model.MovieDetail;
+import com.tkb.movie.model.Review;
+import com.tkb.movie.model.Trailer;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -2,19 +2,14 @@ package com.tkb.movie.fragment;
 
 import android.os.Handler;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
-import com.tkb.movie.internet.model.Movie;
-import com.tkb.movie.internet.model.MovieData;
+import com.tkb.movie.model.Movie;
+import com.tkb.movie.model.MovieData;
 import com.tkb.movie.internet.network.ApiService;
 
 import java.net.SocketTimeoutException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

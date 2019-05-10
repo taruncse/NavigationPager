@@ -20,8 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tkb.movie.fragment.LibraryFragment;
-import com.tkb.movie.fragment.PlaylistFragment;
-import com.tkb.movie.pagination.LoadMovieFragment;
 
 public class MusicActivity extends AppCompatActivity{
 
@@ -71,20 +69,7 @@ public class MusicActivity extends AppCompatActivity{
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 int id = item.getItemId();
-
-                if (id == R.id.popular_movies) {
-                    fragment = new LibraryFragment();
-                } else if (id == R.id.discover_movies) {
-                    fragment = new PlaylistFragment();
-                } else if (id == R.id.upcoming_movies) {
-                    fragment = new PlaylistFragment();
-
-                } else if (id == R.id.now_playing) {
-                    fragment = new PlaylistFragment();
-
-                }else if (id == R.id.top_rated) {
-                    fragment = new LoadMovieFragment();
-                }
+                fragment = FragmentsManager.getFragment(id);
 
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 transaction.replace(R.id.main_container_wrapper, fragment);
