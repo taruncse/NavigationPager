@@ -12,15 +12,15 @@ import com.tkb.movie.adapter.CustomFragmentPageAdapter;
 import com.tkb.movie.internet.network.Constant;
 
 
-public class LibraryFragment extends Fragment {
+public class PopularMovieFragment extends Fragment {
 
-    private static final String TAG = LibraryFragment.class.getSimpleName();
+    private static final String TAG = PopularMovieFragment.class.getSimpleName();
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
 
-    public LibraryFragment() {
+    public PopularMovieFragment() {
     }
 
     @Override

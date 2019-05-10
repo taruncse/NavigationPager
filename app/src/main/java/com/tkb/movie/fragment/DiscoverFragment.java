@@ -10,16 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tkb.movie.R;
-import com.tkb.movie.adapter.PlaylistAdapter;
+import com.tkb.movie.adapter.DiscoverAdapter;
 import com.tkb.movie.entities.PlaylistObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaylistFragment extends Fragment {
+public class DiscoverFragment extends Fragment {
 
 
-    public PlaylistFragment() {
+    public DiscoverFragment() {
     }
 
 
@@ -32,7 +32,7 @@ public class PlaylistFragment extends Fragment {
         playlisRecyclerView.setLayoutManager(gridLayout);
         playlisRecyclerView.setHasFixedSize(true);
 
-        PlaylistAdapter mAdapter = new PlaylistAdapter(getActivity(), getTestData());
+        DiscoverAdapter mAdapter = new DiscoverAdapter(getActivity(), getTestData());
         playlisRecyclerView.setAdapter(mAdapter);
 
         return view;

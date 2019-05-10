@@ -15,23 +15,22 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.tkb.movie.R;
-import com.tkb.movie.adapter.SongPagingAdapter;
-import com.tkb.movie.internet.network.Constant;
+import com.tkb.movie.adapter.AllMovieAdapter;
 
-public class SongFragment extends Fragment {
+public class AllMovieFragment extends Fragment {
     private PublishProcessor<Integer> paginator = PublishProcessor.create();
     private boolean loading = false;
     private ProgressBar progressBar;
-    SongPagingAdapter paginationAdapter;
+    AllMovieAdapter paginationAdapter;
     private int pageNumber = 1;
     private int lastVisibleItem, totalItemCount;
     private GridLayoutManager gridLayoutManager;
     private final int VISIBLE_THRESHOLD = 1;
-    SongViewModel model;
+    AllMovieViewModel model;
     RecyclerView songRecyclerView;
     int position;
 
-    public SongFragment() {
+    public AllMovieFragment() {
 
     }
 
@@ -51,8 +50,8 @@ public class SongFragment extends Fragment {
         return view;
     }
 
-    public static SongFragment newInstance(int num) {
-        SongFragment f = new SongFragment();
+    public static AllMovieFragment newInstance(int num) {
+        AllMovieFragment f = new AllMovieFragment();
 
         // Supply num input as an argument.
         Bundle args = new Bundle();
@@ -72,7 +71,7 @@ public class SongFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        paginationAdapter = new SongPagingAdapter(getActivity());
+        paginationAdapter = new AllMovieAdapter(getActivity());
         songRecyclerView.setAdapter(paginationAdapter);
         setUpLoadMoreListener();
         subscribeForData();
@@ -109,7 +108,7 @@ public class SongFragment extends Fragment {
     }
 
     private void loadData(){
-        model = ViewModelProviders.of(this).get(SongViewModel.class);
+        model = ViewModelProviders.of(this).get(AllMovieViewModel.class);
         model.getMovie(position,pageNumber).observe(this, movieList -> {
 
             paginationAdapter.addItems(movieList.get(position));

@@ -8,13 +8,13 @@ import android.widget.TextView;
 
 import com.tkb.movie.R;
 
-public class PlaylistViewHolder extends RecyclerView.ViewHolder{
+public class DiscoverViewHolder extends RecyclerView.ViewHolder{
 
     public TextView playlistTitle;
     public TextView playlistTracks;
     public ImageView playlistCover;
 
-    public PlaylistViewHolder(View itemView) {
+    public DiscoverViewHolder(View itemView) {
         super(itemView);
 
         playlistTitle = itemView.findViewById(R.id.play_list_name);

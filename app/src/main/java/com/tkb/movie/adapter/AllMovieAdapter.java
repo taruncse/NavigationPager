@@ -13,12 +13,12 @@ import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class SongPagingAdapter extends RecyclerView.Adapter<SongViewHolder>{
+public class AllMovieAdapter extends RecyclerView.Adapter<AllMovieViewHolder>{
 
     private Context context;
     private List<MovieData> allMovies = new ArrayList<>();
 
-    public SongPagingAdapter(Context context) {
+    public AllMovieAdapter(Context context) {
         this.context = context;
     }
     public void addItems(List<MovieData> items) {
@@ -28,13 +28,13 @@ public class SongPagingAdapter extends RecyclerView.Adapter<SongViewHolder>{
         this.allMovies.add(item);
     }
     @Override
-    public SongViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AllMovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.row_movie, parent, false);
-        return new SongViewHolder(view);
+        return new AllMovieViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(SongViewHolder holder, int position) {
+    public void onBindViewHolder(AllMovieViewHolder holder, int position) {
         MovieData songs = allMovies.get(position);
         holder.textTitle.setText(songs.getTitle());
         holder.textReleased.setText(songs.getReleaseDate());

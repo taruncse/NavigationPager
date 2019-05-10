@@ -3,7 +3,7 @@ package com.tkb.movie.adapter;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-import com.tkb.movie.fragment.SongFragment;
+import com.tkb.movie.fragment.AllMovieFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class CustomFragmentPageAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        SongFragment fragment = SongFragment.newInstance(position);
+        AllMovieFragment fragment = AllMovieFragment.newInstance(position);
         return fragment;
     }
 

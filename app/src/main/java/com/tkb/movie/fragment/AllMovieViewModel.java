@@ -18,9 +18,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SongViewModel extends ViewModel {
+public class AllMovieViewModel extends ViewModel {
 
-    private String TAG = SongViewModel.class.getSimpleName();
+    private String TAG = AllMovieViewModel.class.getSimpleName();
     Handler handler = new Handler(); // new handler
 
     private MutableLiveData<HashMap<Integer,List<MovieData>>> movieList;

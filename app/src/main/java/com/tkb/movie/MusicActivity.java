@@ -1,6 +1,5 @@
 package com.tkb.movie;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,7 +18,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tkb.movie.fragment.LibraryFragment;
+import com.tkb.movie.fragment.PopularMovieFragment;
 
 public class MusicActivity extends AppCompatActivity{
 
@@ -51,10 +50,10 @@ public class MusicActivity extends AppCompatActivity{
 
 
         if (savedInstanceState != null) {
-            fragment =  getSupportFragmentManager().findFragmentByTag("LibraryFragment");
+            fragment =  getSupportFragmentManager().findFragmentByTag("PopularMovieFragment");
         } else {
-            fragment = new LibraryFragment();
-            getSupportFragmentManager().beginTransaction().add(R.id.main_container_wrapper, fragment, "LibraryFragment").commit();
+            fragment = new PopularMovieFragment();
+            getSupportFragmentManager().beginTransaction().add(R.id.main_container_wrapper, fragment, "PopularMovieFragment").commit();
 
         }
         /*//fragmentTransaction.replace(R.id.main_container_wrapper, fragment);

@@ -9,14 +9,14 @@ import android.widget.TextView;
 import com.tkb.movie.R;
 
 
-public class SongViewHolder extends RecyclerView.ViewHolder{
+public class AllMovieViewHolder extends RecyclerView.ViewHolder{
 
     public TextView textTitle;
     public TextView textReleased;
     public TextView textRating;
     public ImageView movieThum;
 
-    public SongViewHolder(View itemView, TextView textTitle, TextView textReleased, ImageView movieThum, TextView textRating) {
+    public AllMovieViewHolder(View itemView, TextView textTitle, TextView textReleased, ImageView movieThum, TextView textRating) {
         super(itemView);
         this.textTitle = textTitle;
         this.textReleased = textReleased;
@@ -24,7 +24,7 @@ public class SongViewHolder extends RecyclerView.ViewHolder{
         this.textRating = textRating;
     }
 
-    public SongViewHolder(View itemView) {
+    public AllMovieViewHolder(View itemView) {
         super(itemView);
 
         textTitle = itemView.findViewById(R.id.txt_title);

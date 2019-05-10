@@ -12,26 +12,26 @@ import com.tkb.movie.entities.PlaylistObject;
 
 import java.util.List;
 
-public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistViewHolder>{
+public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverViewHolder>{
 
-    private static final String TAG = PlaylistAdapter.class.getSimpleName();
+    private static final String TAG = DiscoverAdapter.class.getSimpleName();
 
     private Context context;
     private List<PlaylistObject> playlists;
 
-    public PlaylistAdapter(Context context, List<PlaylistObject> playlists) {
+    public DiscoverAdapter(Context context, List<PlaylistObject> playlists) {
         this.context = context;
         this.playlists = playlists;
     }
 
     @Override
-    public PlaylistViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DiscoverViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.play_list_layout, parent, false);
-        return new PlaylistViewHolder(view);
+        return new DiscoverViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(PlaylistViewHolder holder, int position) {
+    public void onBindViewHolder(DiscoverViewHolder holder, int position) {
         PlaylistObject playlistObject = playlists.get(position);
         holder.playlistTitle.setText(playlistObject.getPlaylistTitle());
         holder.playlistTracks.setText(playlistObject.getPlaylistTracks());
