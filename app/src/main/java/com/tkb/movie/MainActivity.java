@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity{
 
 
 
-        fragmentManager = getSupportFragmentManager();
+        //fragmentManager = getSupportFragmentManager();
         //final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
 
@@ -64,21 +64,18 @@ public class MainActivity extends AppCompatActivity{
         TextView profileName =  header.findViewById(R.id.profile_name);
         profileName.setText("Adele");
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                int id = item.getItemId();
-                fragment = FragmentsManager.getFragment(id);
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            fragment = FragmentsManager.getFragment(id);
 
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.main_container_wrapper, fragment);
-                transaction.commit();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.main_container_wrapper, fragment);
+            transaction.commit();
 
-                DrawerLayout drawer =  findViewById(R.id.drawer_layout);
-                assert drawer != null;
-                drawer.closeDrawer(GravityCompat.START);
-                return true;
-            }
+            DrawerLayout drawer1 =  findViewById(R.id.drawer_layout);
+            assert drawer1 != null;
+            drawer1.closeDrawer(GravityCompat.START);
+            return true;
         });
     }
 

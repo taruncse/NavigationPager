@@ -17,6 +17,8 @@ import android.widget.ProgressBar;
 import com.tkb.movie.R;
 import com.tkb.movie.adapter.AllMovieAdapter;
 
+import java.util.HashMap;
+
 public class AllMovieFragment extends Fragment {
     private PublishProcessor<Integer> paginator = PublishProcessor.create();
     private boolean loading = false;
@@ -29,6 +31,8 @@ public class AllMovieFragment extends Fragment {
     AllMovieViewModel model;
     RecyclerView songRecyclerView;
     int position;
+
+    private static HashMap<Integer,AllMovieFragment> fragmentHashMap = new HashMap<>();
 
     public AllMovieFragment() {
 
@@ -51,14 +55,20 @@ public class AllMovieFragment extends Fragment {
     }
 
     public static AllMovieFragment newInstance(int num) {
-        AllMovieFragment f = new AllMovieFragment();
 
-        // Supply num input as an argument.
-        Bundle args = new Bundle();
-        args.putInt("position", num);
-        f.setArguments(args);
+        if (fragmentHashMap.get(num) != null){
+            return fragmentHashMap.get(num);
+        }else {
+            AllMovieFragment f = new AllMovieFragment();
 
-        return f;
+            // Supply num input as an argument.
+            Bundle args = new Bundle();
+            args.putInt("position", num);
+            f.setArguments(args);
+            fragmentHashMap.put(num,f);
+            return f;
+        }
+
     }
 
     @Override
